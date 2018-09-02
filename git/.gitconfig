@@ -1,0 +1,54 @@
+[http]
+	lowSpeedLimit = 0
+	lowSpeedTime = 999999
+[user]
+	name = starifly
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[color "branch"]
+    current = green
+    local = normal
+    remote = blue
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[core]
+    editor = vim
+    # pager = less -FRSX
+    # excludesfile = ~/.gitignore
+    # whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    autocrlf = input
+[alias]
+    ci = commit
+    cm = commit -m
+    ca = commit -am
+    co = checkout
+    st = status
+    br = branch
+    mg = merge
+    df = diff
+    dc = diff --cached
+    last = diff HEAD^
+    amend = commit --amend
+    lg = log --all --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %Cgreen(%cr) %Cblue<%an>%Creset %s' --abbrev-commit --date=relative
+    oneline = log --oneline --graph --all
+    l = log --graph --date=short
+    changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+    short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+    simple = log --pretty=format:\" * %s\"
+    shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+    unstage = reset HEAD
+    uncommit = reset --soft HEAD^
+[rerere]
+    enabled = true
+[push]
+	default = tracking
