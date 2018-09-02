@@ -1,1 +1,1 @@
-vim/init.vim
+.FlyVim/init.vim
