@@ -1,1 +1,0 @@
-~/.FlyVim/init.vim
