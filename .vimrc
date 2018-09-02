@@ -1,1 +1,1 @@
-/home/hellolinux/dotfiles/vim/init.vim
+vim/init.vim
