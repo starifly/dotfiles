@@ -1,0 +1,1 @@
+/home/hellolinux/dotfiles/vim/init.vim
