@@ -1,26 +1,32 @@
 [http]
-	lowSpeedLimit = 0
-	lowSpeedTime = 999999
+    lowSpeedLimit = 0
+    lowSpeedTime = 999999
 [user]
-	name = starifly
+    name = starifly
+    email = 735688270@qq.com
 [color]
     diff = auto
     status = auto
     branch = auto
     ui = true
 [color "branch"]
-    current = green
+    current = green bold
     local = normal
     remote = blue
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = "red bold 52"
+    newNormal = "green bold"
+    newHighlight = "green bold 22"
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+    added = green
+    changed = yellow
+    untracked = red
 [core]
     editor = vim
     # pager = less -FRSX
@@ -28,17 +34,54 @@
     # whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf = input
 [alias]
-    ci = commit
+    # Stage
+    a = add
+
+    # Branch
+    br = branch
+
+    # bisect
+    bsb = bisect bad
+    bsg = bisect good
+    bsr = bisect reset
+    bss = bisect start
+
+    # Commit
+    c = commit
     cm = commit -m
     ca = commit -am
+    amend = commit --amend
+
+    # Clone
+    cl = clone
+
+    # Checkout
     co = checkout
-    st = status
-    br = branch
-    mg = merge
+    cb = checkout -b
+
+    # Cherry-pick
+    cp = cherry-pick
+
+    # Diff
     df = diff
     dc = diff --cached
     last = diff HEAD^
-    amend = commit --amend
+
+    m = merge
+
+    # Pull/Push
+    pl = pull
+    p = push
+
+    # Reset
+    unstage = reset HEAD
+    uncommit = reset --soft HEAD^
+
+    # Remote
+    r = remote -v
+
+    # Misc
+    st = status
     lg = log --all --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %Cgreen(%cr) %Cblue<%an>%Creset %s' --abbrev-commit --date=relative
     oneline = log --oneline --graph --all
     l = log --graph --date=short
@@ -46,9 +89,8 @@
     short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
     simple = log --pretty=format:\" * %s\"
     shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
-    unstage = reset HEAD
-    uncommit = reset --soft HEAD^
 [rerere]
     enabled = true
 [push]
-	default = tracking
+    default = tracking
+    followTags = true
